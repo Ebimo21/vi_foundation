@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+body{
+    padding: 2% 20% ;
+    font-family: Montserrat;
+}
+
+h1{
+    font-size: 40px;
+    font-weight: 800;
+    background: #D748C6;
+    /* background: -webkit-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    /* background: -moz-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    background: linear-gradient( 40deg, #ff00e1 25%, #05fcfc 62%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+
+
+}
+
+@media (max-width: 1800px){
+    body{
+        padding: 20px 100px ;
+    }
+}
+@media (max-width: 1000px){
+    body{
+        padding: 20px 5vw ;
+    }
+}
+
