@@ -1,10 +1,15 @@
 import React from 'react'
+import { About } from '../components/About'
 import Layout from '../components/Layout'
+import Mission from '../components/Mission'
+import Team from '../components/Team'
 
-export default function About () {
+const about = () => {
   return (
     <Layout title={"About"}>
-        <h1>About</h1>
+      <About/>
     </Layout>
   )
 }
+
+export default about

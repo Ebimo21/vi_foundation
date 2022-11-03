@@ -6,17 +6,18 @@
 
 
 body{
-    padding: 2% 20% ;
+    /* padding: 2% 20% ; */
     font-family: Montserrat;
 }
 
 h1{
     font-size: 40px;
     font-weight: 800;
-    background: #D748C6;
+    /* background: #D748C6; */
+    background: #ff00ff;
     /* background: -webkit-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
     /* background: -moz-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
-    background: linear-gradient( 40deg, #ff00e1 25%, #05fcfc 62%);
+    background: linear-gradient( 40deg, #ff00ff 25%, #00ffef 62%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     
@@ -24,14 +25,78 @@ h1{
 
 }
 
+h2{
+    font-size: 40px;
+    font-weight: 800;
+    background: #ff00ff;
+    /* background: -webkit-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    /* background: -moz-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    background: linear-gradient( 40deg, #ff00ff 5%, #00ffef 42%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+h3{
+    font-size: 40px;
+    font-weight: 800;
+    background: #ff00ff;
+    /* background: -webkit-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    /* background: -moz-linear-gradient( 80deg, #D748C6 0%, #4595f4 12%); */
+    background: linear-gradient( 20deg, #ff00ff 35%, #00ffef 62%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.about--image-container div:first-child{
+    border: 5px solid green;
+
+}
+
+.about--image-container div:last-child{
+    outline-width: 5px;
+    outline-color: white;
+    outline-style: solid;
+}
+
+
+.bg{
+    background-image: url("/assets/images/landing-image-2.png");
+    background-size: 200px;
+    background-repeat: no-repeat;
+    /* background-position: left; */
+
+    border-radius: 10px;
+
+
+
+
+}
+
+#landing{
+    background-image: url("/assets/images/landing-image.png");
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position: 30vw;
+}
+
+
+
 @media (max-width: 1800px){
     body{
-        padding: 20px 100px ;
+        /* padding: 20px 100px ; */
     }
 }
 @media (max-width: 1000px){
     body{
-        padding: 20px 5vw ;
+        /* padding: 20px 3vw ; */
     }
 }
 
+@media (max-width: 576px){
+    #landing{
+        background-image: url("/assets/images/landing-image.png");
+        background-size: 600px;
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+}
