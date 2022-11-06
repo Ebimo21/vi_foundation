@@ -4,15 +4,22 @@ import Button from './Button'
 
 const Landing = () => {
   return (
-    <section id='landing' className='flex h-[500px] sm:h-[85vh] items-start '>
-        <div className='basis-3/5 sm:basis-full sm:translate-y-10'>
-          <h1 className='text-6xl lg:text-5xl md:text-4xl '>No Vulnerable <br />Child is deprived <br /> of a quality life.</h1>
-          <p className='text-xl lg:text-lg md:text-sm mt-6'>Improving the life of the male and female child. The foundation is of the opinion thatevery child should have the opportunity of a good life.</p>
+    <section className='flex flex-wrap items-center'>
+      <div className='basis-7/12 md:basis-9/12 sm:basis-full'>
+        <div className='max-w-[560px] md:max-w-full '>
+
+      <h1 className='text-5xl lg:text-4xl xmd:text-4xl '>No Vulnerable Child is deprived of a quality life.</h1>
+          <p className='xtext-xl xlg:text-lg xmd:text-sm xmt-6'>Improving the life of the male and female child. The foundation is of the opinion thatevery child should have the opportunity of a good life.</p>
           <Button 
             text="Let's Work Together" 
             styling="p-2 w-52 mt-6 bg-[rgb(255, 0, 255)] bg-gradient-to-r from-[#ff00ff] to-[#00ffef]"
-          />
-        </div>
+            />
+            </div>
+      </div>
+
+      <div className='basis-5/12 md:basis-full'>
+      <img className='block ml-auto md:m-auto w-full max-w-[250px]' src='assets/images/landing-image-2.png' />
+      </div>
     </section>
   )
 }

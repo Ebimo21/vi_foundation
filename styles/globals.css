@@ -72,12 +72,12 @@ h3{
 
 }
 
-#landing{
+/* #landing{
     background-image: url("/assets/images/landing-image.png");
     background-size: 800px;
     background-repeat: no-repeat;
     background-position: 30vw;
-}
+} */
 
 
 
@@ -93,10 +93,10 @@ h3{
 }
 
 @media (max-width: 576px){
-    #landing{
+    /* #landing{
         background-image: url("/assets/images/landing-image.png");
         background-size: 600px;
         background-repeat: no-repeat;
         background-position: bottom;
-    }
+    } */
 }

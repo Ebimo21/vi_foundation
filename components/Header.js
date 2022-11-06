@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import Button from './Button'
-import headerNavLinks from '../data/headerNavLink'
 import MobileNav from './MobileNav'
 import Link from 'next/link'
 
-export const Header = () => {
+export const Header = ({menu}) => {
   return (
-    <header className='flex items-center font-medium px-[100px] py-[20px] sm:px-[20px]'>
+    <header className='flex items-center font-medium px-[100px] md:px-0 md:w-11/12 md:m-auto py-[20px]'>
         <span className='flex items-center' >
             <Image 
               className='inline' 
@@ -19,7 +18,7 @@ export const Header = () => {
         </span>
 
         <menu className='flex gap-[6vw] ml-auto items-center lg:hidden '>
-            {headerNavLinks.map((item, index)=> <li key={index}><Link href={item.href}>{item.title}</Link></li>)}
+            {menu.map((item, index)=> <li key={index}><Link href={item.href}>{item.link}</Link></li>)}
             <li><Button 
                   text="Contact Us" 
                   styling="bg-[rgb(255, 0, 255)] bg-gradient-to-r from-[#ff00ff] to-[#00ffef] p-2 w-36"
@@ -33,3 +32,4 @@ export const Header = () => {
     </header>
   )
 }
+

@@ -6,13 +6,14 @@ import { Section } from './Section'
 export const About = () => {
   return (
     <Section styling="flex items-center flex-wrap-reverse sm:my-10">
-      <div className='basis-[50%] sm:hidden '>
-        <Image 
+      <div className='basis-[50%] md:basis-full'>
+        <img src='/assets/images/boy png.png' className='ml-auto block md:m-auto w-full max-w-[250px]' alt="people playing around with kids"/>
+        {/* <Image 
           className='ml-auto' 
           src="/assets/images/boy png.png" 
           alt="people playing around with kids" 
           width="400" 
-          height="400" />
+          height="400" /> */}
       </div>
 
       <div className='basis-[50%] sm:basis-full'>

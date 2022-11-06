@@ -3,7 +3,7 @@ import React from 'react'
 import { Footer } from './Footer'
 import { Header } from './Header'
 
-const Layout = ({children, title}) => {
+const Layout = ({children, title , menu}) => {
   return (
     <>
         <Head>
@@ -12,8 +12,8 @@ const Layout = ({children, title}) => {
             <link rel="icon" href="/favicon.ico" />
         </Head>
 
-        <Header/>
-        <main className='px-[100px] sm:px-[20px]'>{children}</main>
+        <Header menu={menu}/>
+          <main className='px-[100px] md:px-0 md:w-11/12 md:m-auto '>{children}</main>
         <Footer/>
     </>
   )

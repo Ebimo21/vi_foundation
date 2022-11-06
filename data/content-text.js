@@ -87,8 +87,15 @@ export const social =[
     }
 ]
 
+export const getInTouch = {
+    pre: "Get In Touch",
+    lead: "Let's Create Something Great Together",
+    image: "black-kid-with-instant-camera.png",
+    alt: "black-kid-with-instant-camera"
+}
+
 export const footer ={
-    Link: [
+    link: [
         "Home",
         "About Us",
         "Donation",
@@ -96,9 +103,9 @@ export const footer ={
         "Projects"
     ],
 
-    Address: "Block 308, Faan Quarters, Bill Clinton Drive, Airport, Abuja, Nigeria",
-    Enquiries: {
-        Email: "vijosephfoundation@gmail.com",
+    address: "Block 308, Faan Quarters, Bill Clinton Drive, Airport, Abuja, Nigeria",
+    enquiries: {
+        email: "vijosephfoundation@gmail.com",
         tel: "+4407464369098, +2348167352842"
     }
 }
@@ -191,6 +198,6 @@ export const text = [
     },
 ]
 
-const item = [];
+const def = [];
 
-export default item 
+export default def 
