@@ -11,7 +11,6 @@ const about = ({menuItem}) => {
   )
 }
 
-
 export async function getStaticProps() {
   const menuItem = await client.fetch(`*[_type == "Link"] | order(id asc)`);
   
