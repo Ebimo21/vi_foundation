@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const Header = ({menu}) => {
   return (
-    <header className='flex items-center font-medium px-[100px] md:px-0 md:w-11/12 md:m-auto py-[20px]'>
+    <header className='max-w-[1050px] m-auto xl:px-[100px] flex items-center font-medium  md:px-0 md:w-11/12 md:m-auto py-[20px]'>
         <span className='flex items-center' >
             <Image 
               className='inline' 

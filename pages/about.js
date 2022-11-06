@@ -3,9 +3,11 @@ import { About } from '../components/About'
 import Layout from '../components/Layout'
 import client from '../config/sanityClient'
 
+// import menuItem from "../data/menuItem";
+
 const about = ({menuItem}) => {
   return (
-    <Layout title={"About"}  menu={menuItem}>
+    <Layout title={"About"} menu={menuItem}>
       <About/>
     </Layout>
   )

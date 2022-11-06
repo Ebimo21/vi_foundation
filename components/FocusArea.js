@@ -4,6 +4,10 @@ import { Section } from './Section'
 import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
 
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from 'react-intersection-observer';
+import { useEffect } from 'react';
+
 // Swiper Js Import
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Scrollbar, A11y, Mousewheel } from 'swiper';
@@ -66,11 +70,12 @@ const FocusArea = ({data}) => {
                     <figure>
                       <img 
                         src={urlFor(item.img).url()} 
-                        alt={item.alt}  
+                        // src={`/assets/images/${item.image}`} 
+                        // alt={item.alt}  
                       />
                     </figure>
                     <div className="card-body">
-                      <h3 className="card-titles  h-14 leading-7 text-xl font-semibold ">{item.lead}</h3>
+                      <h4 className="card-titles  h-14 leading-7 text-xl font-semibold ">{item.lead}</h4>
                       <p className=''>{item.sub}</p>
                       <quote className="font-bold italic ">{`"${item.slogan}"`}</quote>
                     </div>

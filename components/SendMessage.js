@@ -21,7 +21,7 @@ const SendMessage = () => {
 
 
   return (
-    <Section styling="flex my-20 flex-wrap gap-10 ">
+    <Section styling="flex my-20 flex-wrap gap-5x items-center ">
         <div className='basis-7/12 lg:basis-full'>
             <p>{content.pre.toUpperCase()}</p>
             <h4 className='text-4xl font-extrabold'>{content.lead}</h4>
@@ -35,8 +35,8 @@ const SendMessage = () => {
                 <input className="btn button" type="submit" value="Send a Message" />
             </form>
         </div>
-        <div className='flex  basis-3/12 lg:basis-full'>
-            <img src={`/assets/images/${content.image}`}  width="100%" height="100%" alt={content.alt} />
+        <div className='flexs  basis-5/12 lg:basis-full'>
+            <img src={`/assets/images/${content.image}`} width="100%"  alt={content.alt} />
         </div>
     </Section>
   )

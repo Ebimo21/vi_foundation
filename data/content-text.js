@@ -1,7 +1,7 @@
-export const FocusArea = {
+export const focusArea = {
     title: "Thematic Focus Area",
     paragraph: "We cover a wide range of intervention which include Sensitization, Relief Materials, HIV/Aids testing and counselling, skill acquisition, community development, Administration of Oral Supplementation, Tuition, Sponsorship etc.",
-    items: [
+    item: [
         {
             image: "portrait-child-listening-music.png",
             alt: "portrait-child-listening-music",

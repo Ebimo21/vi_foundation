@@ -13,7 +13,7 @@ const Layout = ({children, title , menu}) => {
         </Head>
 
         <Header menu={menu}/>
-          <main className='px-[100px] md:px-0 md:w-11/12 md:m-auto '>{children}</main>
+          <main className='max-w-[1050px] xl:px-[100px] m-auto  md:px-0 md:w-11/12 md:m-auto '>{children}</main>
         <Footer/>
     </>
   )

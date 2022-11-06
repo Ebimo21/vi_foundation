@@ -1,11 +1,14 @@
 import React from 'react'
 import Layout from '../components/Layout'
 import client from '../config/sanityClient'
+// import menuItem from "../data/menuItem";
 
 const projects = ({menuItem}) => {
   return (
     <Layout title={"Projects"} menu={menuItem}>
-    <h1>projects</h1>
+      <div className='flex items-center h-[50vh]'>
+        <h1>Projects Page</h1>
+      </div>
     </Layout>
   )
 }
