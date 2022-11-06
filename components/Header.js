@@ -27,7 +27,7 @@ export const Header = ({menu}) => {
         </menu>
 
         <span className='ml-auto hidden lg:block'>
-            <MobileNav/>
+            <MobileNav menu={menu}/>
         </span>
     </header>
   )
