@@ -3,7 +3,7 @@ import React from 'react'
 import { Section } from './Section'
 import { createClient } from 'next-sanity'
 import imageUrlBuilder from '@sanity/image-url'
-
+import client, { urlFor} from '../config/sanityClient'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
@@ -21,23 +21,48 @@ import 'swiper/css/mousewheel';
 
 
 const FocusArea = ({data}) => {
-  const client = createClient({
-    projectId: "gy5ghu0p",
-    dataset: "production",
-    apiVersion: "2022-03-25",
-    useCdn: false
-  });
 
-  const builder =imageUrlBuilder(client)
-  function urlFor(source) {
-    return builder.image(source)
+  const builder =imageUrlBuilder(client);
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+  const aniVariant = {
+    visible: {opacity: 1, y: 0, transition: {duration: 0.4}},
+    hidden: {opacity: 0, y: 50}
+  }
+  
+  const aniVariant2 = {
+    visible: {opacity: 1, y: 0, transition: {duration: 0.7, delay: 0.4}},
+    hidden: {opacity: 0, y: 50}
   }
 
+  useEffect(() => {
+    if(inView){
+      controls.start("visible");
+
+    }
+  }, [controls, inView])
+  
   return (
     <Section styling="flex flex-col items-center text-center my-10">
-      <h2 className='sm:text-3xl'>{data.title}</h2>
-      <p className='w-4/5 sm:w-full m-auto'>{data.paragraph}</p>
-      <div className='flex justify-around w-full flex-wrap'>
+      <motion.h2 
+        ref={ref} 
+        variants={aniVariant} 
+        animate={controls} 
+        initial="hidden"
+        className='sm:text-3xl mb-2'>{data.title}</motion.h2>
+      <motion.p 
+        ref={ref} 
+        variants={aniVariant2} 
+        animate={controls} 
+        initial="hidden"
+        className='w-4/5 sm:w-full m-auto mb-10'>{data.paragraph}</motion.p>
+      <motion.div 
+        ref={ref} 
+        variants={aniVariant} 
+        animate={controls} 
+        initial="hidden"
+        className='flex justify-around w-full flex-wrap'>
         <Swiper
           cssMode={true}
           modules={[Navigation, Pagination, Mousewheel, Scrollbar, A11y]}
@@ -71,7 +96,7 @@ const FocusArea = ({data}) => {
                       <img 
                         src={urlFor(item.img).url()} 
                         // src={`/assets/images/${item.image}`} 
-                        // alt={item.alt}  
+                        alt={item.alt}  
                       />
                     </figure>
                     <div className="card-body">
@@ -84,7 +109,7 @@ const FocusArea = ({data}) => {
               )
           })}
         </Swiper>
-      </div>
+      </motion.div>
     </Section>
   )
 }

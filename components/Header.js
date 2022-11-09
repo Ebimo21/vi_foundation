@@ -19,10 +19,11 @@ export const Header = ({menu}) => {
 
         <menu className='flex gap-[6vw] ml-auto items-center lg:hidden '>
             {menu.map((item, index)=> <li key={index}><Link href={item.href}>{item.link}</Link></li>)}
-            <li><Button 
+            <li>
+              <Button 
                   text="Contact Us" 
                   styling="bg-[rgb(255, 0, 255)] bg-gradient-to-r from-[#ff00ff] to-[#00ffef] p-2 w-36"
-                />
+              />
             </li>
         </menu>
 

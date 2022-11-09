@@ -5,8 +5,13 @@ import { Section } from './Section'
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
+import imageUrlBuilder from '@sanity/image-url'
+import client, { urlFor } from '../config/sanityClient';
 
-export const About = () => {
+export const About = ({data}) => {
+  
+  const builder =imageUrlBuilder(client)
+
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const aniVariant1 = {
@@ -39,7 +44,8 @@ export const About = () => {
         className='basis-[50%] md:basis-full'
       >
         <img 
-          src='/assets/images/boy png.png' 
+          src={urlFor(data.img).url()}
+          // src='/assets/images/boy png.png' 
           className='ml-auto block md:m-auto w-full max-w-[250px]' 
           alt="people playing around with kids"
         />
@@ -51,13 +57,13 @@ export const About = () => {
           variants={aniVariant1} 
           animate={controls} 
           initial="hidden" 
-          className='text-5xl leading-relaxed sm:text-xl'>About Us</motion.h2>
+          className='text-3xl leading-relaxed sm:text-xl'>{data.lead}</motion.h2>
         <motion.p 
           ref={ref} 
           variants={aniVariant2} 
           animate={controls} 
           initial="hidden" 
-          className='xlg:text-[1.5vw] xsm:text-sm'>VI Joseph Foundationa works to improve the life of the male and female child. The foundation is of the opinion that no child should be denied of the opportunity of a good life, young ones are the future of the nation so they must be supported and equipped with the tools they require to succeed.</motion.p>
+          className='xlg:text-[1.5vw] xsm:text-sm'>{data.sub}</motion.p>
         <Button 
           text="Learn More" 
           styling="p-2 w-52 mt-6 bg-[rgb(255, 0, 255)] bg-gradient-to-r from-[#ff00ff] to-[#00ffef]"/>
