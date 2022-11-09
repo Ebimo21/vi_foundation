@@ -26,7 +26,7 @@ export default function Home({menuItem, focusArea, core , team, heading, about, 
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const menuItem = await client.fetch(`*[_type == "Link"] | order(id asc)`);
   const focusAreas = await client.fetch(`*[_type == "focusArea"]`);
   const focusArea = focusAreas[0];
