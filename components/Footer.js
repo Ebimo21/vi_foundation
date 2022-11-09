@@ -1,7 +1,7 @@
 import React from 'react'
 import { footer, social } from '../data/content-text'
 
-// import 'boxicons'
+import 'boxicons'
 import Link from 'next/link'
 
 export const Footer = () => {
