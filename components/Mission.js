@@ -1,8 +1,8 @@
+// import { core } from '../data/content-text';
 import React from 'react'
-import { core } from '../data/content-text';
 import MissionCard from './MissionCard';
 import { createClient } from 'next-sanity'
-import imageUrlBuilder from '@sanity/image-url'
+import { urlFor } from '../config/sanityClient';
 
 // Swiper JS imports
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -18,17 +18,6 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/mousewheel';
 
 const Mission = ({data}) => {
-  const client = createClient({
-    projectId: "gy5ghu0p",
-    dataset: "production",
-    apiVersion: "2022-03-25",
-    useCdn: false
-  });
-  const builder =imageUrlBuilder(client)
-  function urlFor(source) {
-    return builder.image(source)
-  }
-
   return (
     <>
       <Swiper

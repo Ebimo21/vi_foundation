@@ -10,8 +10,6 @@ import client, { urlFor } from '../config/sanityClient';
 
 export const About = ({data}) => {
   
-  const builder =imageUrlBuilder(client)
-
   const controls = useAnimation();
   const [ref, inView] = useInView();
   const aniVariant1 = {

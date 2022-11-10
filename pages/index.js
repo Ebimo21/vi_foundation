@@ -1,4 +1,5 @@
 // import { icon, text, core, focusArea, team} from '../data/content-text'
+// import menuItem from "../data/menuItem";
 import React from "react";
 import { About } from "../components/About";
 import FocusArea from "../components/FocusArea";
@@ -10,12 +11,22 @@ import Mission from "../components/Mission";
 import SendMessage from "../components/SendMessage";
 import client from '../config/sanityClient'
 
-import menuItem from "../data/menuItem";
-export default function Home({menuItem, focusArea, core , team, heading, about, getintouch, icon}) {
-  console.log(icon)
+export default function Home(
+  {
+    menuItem, 
+    focusArea, 
+    core, 
+    team, 
+    heading, 
+    about, 
+    getintouch, 
+    icon,
+    footer
+  }
+  ) {
   return (
-    <Layout title="Home" menu={menuItem}>
-      <Landing menu={heading} />
+    <Layout title="Home" menu={menuItem} data={footer}>
+      <Landing data={heading} />
       <About data={about} />
       <Iconista items={icon} styling="-translate-y-5 sm:-translate-y-0 sm:my-10" />
       <Mission data={core}/>
@@ -40,8 +51,21 @@ export async function getServerSideProps() {
   const getintouchs = await client.fetch(`*[_type == "getintouch"]`);
   const getintouch = getintouchs[0]
   const icon = await client.fetch(`*[_type == "icon"]`);
+  const footers = await client.fetch(`*[_type == "footer"]`);
+  const footer = footers[0]
   
   return {
-    props: { menuItem, focusArea, core, team, heading, about, getintouch, icon }
+    props: 
+    { 
+      menuItem, 
+      focusArea, 
+      core, 
+      team, 
+      heading, 
+      about, 
+      getintouch, 
+      icon,
+      footer
+    }
   };
 }

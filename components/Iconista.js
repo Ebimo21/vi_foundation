@@ -1,15 +1,12 @@
 import Image from 'next/image'
 import React from 'react'
 import { Section } from './Section'
-import imageUrlBuilder from '@sanity/image-url'
-import client, { urlFor } from '../config/sanityClient';
+import { urlFor } from '../config/sanityClient';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 const Iconista = ({items, styling}) => {
-
-  const builder =imageUrlBuilder(client)
 
   const controls = useAnimation();
   const [ref, inView] = useInView();

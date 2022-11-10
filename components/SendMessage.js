@@ -1,15 +1,12 @@
 import React, { useRef } from 'react';
 import { Section } from './Section'
 import emailjs from '@emailjs/browser';
-import imageUrlBuilder from '@sanity/image-url'
-import client, { urlFor } from '../config/sanityClient';
+import { urlFor } from '../config/sanityClient';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
 const SendMessage = ({data}) => {
-
-  const builder =imageUrlBuilder(client);
 
   const controls = useAnimation();
   const [ref, inView] = useInView();
@@ -19,12 +16,12 @@ const SendMessage = ({data}) => {
   }
   
   const aniVariant2 = {
-    visible: {opacity: 1, y: 0, transition: {duration: 0.7, delay: 0.4}},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.7, delay: 0.2}},
     hidden: {opacity: 0, y: 50}
   }
   
   const aniVariant3 = {
-    visible: {opacity: 1, y: 0, transition: {duration: 0.8, delay: 0.6}},
+    visible: {opacity: 1, y: 0, transition: {duration: 0.8, delay: 0.4}},
     hidden: {opacity: 0, y: 50}
   }
 
